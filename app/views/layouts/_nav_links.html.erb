@@ -1,12 +1,12 @@
-<li><%= link_to 'Public Resource Index', "#" %></li>
+<li><%= link_to 'All Apartments', "#" %></li>
 <li><%= link_to 'About', about_path %></li>
 <li><%= link_to 'Contact', contact_path %></li>
 <% if current_user %>
-    <li><%= link_to 'Index of My Resources', "#" %></li>
-    <li><%= link_to 'Create a Resource', "#" %></li>
+    <li><%= link_to 'My Apartment Listings', "#" %></li>
+    <li><%= link_to 'List Another Apartment', "#" %></li>
     <li><%= link_to 'My Account', edit_user_registration_path %></li>
     <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
 <% else %>
+    <li><%= link_to 'List My Apartment', new_user_registration_path %></li>
     <li><%= link_to 'Sign In', new_user_session_path %></li>    
-    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
 <% end %>

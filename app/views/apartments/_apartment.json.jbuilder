@@ -1,2 +1,0 @@
-json.extract! apartment, :id, :street, :from_date, :to_date, :to_date_open, :flex_dates, :price, :price_neg, :agent_fee, :furnished, :package, :flights, :beds, :baths, :description, :created_at, :updated_at
-json.url apartment_url(apartment, format: :json)

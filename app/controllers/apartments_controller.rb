@@ -37,7 +37,13 @@ class ApartmentsController < ApplicationController
   end
 
   def destroy
-    @apartment.destroy
+    if @apartment.destroy
+       flash[:notice] = "Your listing was deleted successfully."
+       redirect_to apartments_path
+     else
+       flash[:error] = "There was an error deleting the apartment. Please try again."
+       render :show
+     end
   end
 
   private

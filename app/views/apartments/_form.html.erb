@@ -1,0 +1,73 @@
+<%= form_for(@apartment) do |f| %>
+  <% if @apartment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
+
+      <ul>
+      <% @apartment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :from_date %><br>
+    <%= f.date_select :from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date %><br>
+    <%= f.date_select :to_date %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date_open %><br>
+    <%= f.check_box :to_date_open %>
+  </div>
+  <div class="field">
+    <%= f.label :flex_dates %><br>
+    <%= f.check_box :flex_dates %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :price_neg %><br>
+    <%= f.check_box :price_neg %>
+  </div>
+  <div class="field">
+    <%= f.label :agent_fee %><br>
+    <%= f.check_box :agent_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :furnished %><br>
+    <%= f.check_box :furnished %>
+  </div>
+  <div class="field">
+    <%= f.label :package %><br>
+    <%= f.check_box :package %>
+  </div>
+  <div class="field">
+    <%= f.label :flights %><br>
+    <%= f.text_field :flights %>
+  </div>
+  <div class="field">
+    <%= f.label :beds %><br>
+    <%= f.text_field :beds %>
+  </div>
+  <div class="field">
+    <%= f.label :baths %><br>
+    <%= f.text_field :baths %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

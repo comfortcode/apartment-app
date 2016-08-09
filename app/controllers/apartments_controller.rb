@@ -17,9 +17,23 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = current_user.apartments.new(apartment_params)
+    
+    if @apartment.save
+       flash[:notice] = "Congratulations! Your apartment has been added."
+    else
+       flash[:error] = "There was an error saving your apartment. Please try again."
+    end
+     redirect_to apartments_path
   end
 
   def update
+     if @apartment.update_attributes(apartment_params)
+       flash[:notice] = "The information was successfully updated."
+       redirect_to @apartment
+     else
+       flash[:error] = "There was an error updating the information. Please try again."
+       render :edit
+     end
   end
 
   def destroy

@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Street</th>
+      <th>User</th>
       <th>From date</th>
       <th>To date</th>
       <th>To date open</th>
@@ -25,6 +26,7 @@
     <% @apartments.each do |apartment| %>
       <tr>
         <td><%= apartment.street %></td>
+        <td><%= apartment.user.email %></td>
         <td><%= apartment.from_date %></td>
         <td><%= apartment.to_date %></td>
         <td><%= apartment.to_date_open %></td>

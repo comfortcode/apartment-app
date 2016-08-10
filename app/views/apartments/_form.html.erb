@@ -1,8 +1,6 @@
 <%= form_for(@apartment) do |f| %>
   <% if @apartment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
-
       <ul>
       <% @apartment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -33,7 +31,7 @@
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.number_field :price, :step => 0.01 %>    
   </div>
   <div class="field">
     <%= f.label :price_neg %><br>
@@ -53,15 +51,15 @@
   </div>
   <div class="field">
     <%= f.label :flights %><br>
-    <%= f.text_field :flights %>
+    <%= f.number_field :flights, :step => 0.5 %>    
   </div>
   <div class="field">
     <%= f.label :beds %><br>
-    <%= f.text_field :beds %>
+    <%= f.number_field :beds, :step => 0.5 %>    
   </div>
   <div class="field">
     <%= f.label :baths %><br>
-    <%= f.text_field :baths %>
+    <%= f.number_field :baths, :step => 0.5 %>    
   </div>
   <div class="field">
     <%= f.label :description %><br>

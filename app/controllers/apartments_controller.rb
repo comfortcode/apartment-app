@@ -20,10 +20,11 @@ class ApartmentsController < ApplicationController
     
     if @apartment.save
        flash[:notice] = "Congratulations! Your apartment has been added."
+       redirect_to apartments_path
     else
-       flash[:error] = "There was an error saving your apartment. Please try again."
+       flash[:error] = "There was an error saving your listing. Please try again."
+       render :new
     end
-     redirect_to apartments_path
   end
 
   def update
@@ -31,7 +32,7 @@ class ApartmentsController < ApplicationController
        flash[:notice] = "The information was successfully updated."
        redirect_to @apartment
      else
-       flash[:error] = "There was an error updating the information. Please try again."
+       flash[:error] = "There was an error updating your listing. Please try again."
        render :edit
      end
   end

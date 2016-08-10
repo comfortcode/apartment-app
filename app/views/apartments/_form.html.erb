@@ -13,6 +13,13 @@
     <%= f.label :street %><br>
     <%= f.text_field :street %>
   </div>
+
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :picture_cache %>
+  </div>
+
   <div class="field">
     <%= f.label :from_date %><br>
     <%= f.date_select :from_date %>

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160811121917) do
   end
 
   add_index "apartments", ["currency_id"], name: "index_apartments_on_currency_id"
+  add_index "apartments", ["user_id"], name: "index_apartments_on_user_id"
 
   create_table "currencies", force: :cascade do |t|
     t.string   "name"

@@ -18,7 +18,7 @@
         <td><%= c.symbol %></td>
         <td><%= c.symbol.html_safe %></td>
         <td><%#= link_to 'Edit', edit_currency_path(c) %></td>
-        <td><%#= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure you want to delete this currency?' } %></td>
+        <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure you want to delete this currency?' } %></td>
       </tr>
     <% end %>
   </tbody>

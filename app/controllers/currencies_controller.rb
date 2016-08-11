@@ -4,6 +4,12 @@ class CurrenciesController < ApplicationController
     @new_currency = Currency.new
   end 
 
+  def destroy
+    @currency = Currency.find(params[:id])
+    @currency.destroy
+    redirect_to currencies_path
+  end
+
   def show
   end
 

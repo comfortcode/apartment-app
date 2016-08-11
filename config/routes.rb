@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  get 'currencies/index'
-
-  get 'currencies/show'
-
-  get 'currencies/new'
-
-  get 'currencies/edit'
 
   resources :apartments
-
+  resources :currencies
+  
   devise_for :users
   root to: 'pages#home'
   get 'about' => 'pages#about', as: :about

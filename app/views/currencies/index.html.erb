@@ -24,3 +24,8 @@
   </tbody>
 </table>
 
+<%= form_for @new_currency do |c| %>
+   <%= c.text_field :name, placeholder: 'Currency Name' %>
+   <%= c.text_field :symbol, placeholder: 'HTML Symbol Syntax' %>
+   <%= c.submit "Save Currency" %>
+ <% end %>

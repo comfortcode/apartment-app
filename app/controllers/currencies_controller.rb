@@ -13,7 +13,15 @@ class CurrenciesController < ApplicationController
   def show
   end
 
-  def new
+  def create
+    @currency = Currency.new(params.require(:currency).permit(:name, :symbol))
+
+     if @currency.save
+       flash[:notice] = "The new currency was saved."
+     else
+       flash[:error] = "There was an error saving the new currency. Please try again!"
+     end
+     redirect_to currencies_path
   end
 
   def edit

@@ -37,6 +37,9 @@
     <%= f.check_box :flex_dates %>
   </div>
   <div class="field">
+    <%= f.collection_select :currency, Currency.order(:name), :currency, "#{:symbol}".html_safe %>
+  </div>
+  <div class="field">
     <%= f.label :price %><br>
     <%= f.number_field :price, :step => 0.01 %>    
   </div>

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'currencies/index'
+
+  get 'currencies/show'
+
+  get 'currencies/new'
+
+  get 'currencies/edit'
+
   resources :apartments
 
   devise_for :users

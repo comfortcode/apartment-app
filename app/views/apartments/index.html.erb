@@ -33,7 +33,7 @@
         <td><%= apartment.to_date_open %></td>
         <td><%= apartment.flex_dates %></td>
         <td><%= apartment.price %></td>
-        <td><%= apartment.currency_id %></td>
+        <td><%= apartment.currency.symbol.html_safe if apartment.currency %></td>
         <td><%= apartment.price_neg %></td>
         <td><%= apartment.agent_fee %></td>
         <td><%= apartment.furnished %></td>

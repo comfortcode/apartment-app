@@ -21,6 +21,7 @@ gem 'devise'
 
 #Pundit
 gem 'pundit'
+
 #Bootstrap
 gem 'bootstrap-sass'
 

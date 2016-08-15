@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Street</th>
+      <th>Area</th>
       <th>User</th>
       <th>From date</th>
       <th>To date</th>
@@ -27,6 +28,7 @@
     <% @apartments.each do |apartment| %>
       <tr>
         <td><%= apartment.street %></td>
+        <td><%= apartment.area.name if apartment.area %></td>
         <td><%= apartment.user.email %></td>
         <td><%= apartment.from_date %></td>
         <td><%= apartment.to_date %></td>

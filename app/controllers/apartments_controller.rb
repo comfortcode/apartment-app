@@ -53,6 +53,6 @@ class ApartmentsController < ApplicationController
     end
 
     def apartment_params
-      params.require(:apartment).permit(:street, :from_date, :to_date, :to_date_open, :flex_dates, :price, :price_neg, :agent_fee, :furnished, :package, :flights, :beds, :baths, :description, :currency_id)
+      params.require(:apartment).permit(:street, :from_date, :to_date, :to_date_open, :flex_dates, :price, :price_neg, :agent_fee, :furnished, :package, :flights, :beds, :baths, :description, :currency_id, :area_id)
     end
 end

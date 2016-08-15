@@ -1,0 +1,30 @@
+<h1>Rental Types Dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Notes</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+      
+    <% @rental_types.each do |r| %>
+      <tr>
+        <td><%= r.id %></td>
+        <td><%= r.name %></td>
+        <td><%= r.notes %></td>
+        <td><%#= link_to 'Edit', edit_currency_path(c) %></td>
+        <td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure you want to delete this rental type?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_for @new_rental_type do |r| %>
+   <%= r.text_field :name, placeholder: 'Name' %>
+   <%= r.text_area :notes, placeholder: 'Notes' %>
+   <%= r.submit "Save Rental Type" %>
+ <% end %>

@@ -5,6 +5,7 @@
     <tr>
       <th>Street</th>
       <th>Area</th>
+      <th>Rental Type</th>
       <th>User</th>
       <th>From date</th>
       <th>To date</th>
@@ -29,6 +30,7 @@
       <tr>
         <td><%= apartment.street %></td>
         <td><%= apartment.area.name if apartment.area %></td>
+        <td><%= apartment.rental_type.name if apartment.rental_type %></td>
         <td><%= apartment.user.email %></td>
         <td><%= apartment.from_date %></td>
         <td><%= apartment.to_date %></td>

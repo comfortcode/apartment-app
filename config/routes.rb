@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
   resources :apartments
+  resources :areas
   resources :currencies
   
   devise_for :users

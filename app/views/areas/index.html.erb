@@ -1,0 +1,30 @@
+<h1>Area Dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Notes</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+      
+    <% @areas.each do |a| %>
+      <tr>
+        <td><%= a.id %></td>
+        <td><%= a.name %></td>
+        <td><%= a.notes %></td>
+        <td><%#= link_to 'Edit', edit_currency_path(c) %></td>
+        <td><%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure you want to delete this area?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_for @new_area do |a| %>
+   <%= a.text_field :name, placeholder: 'Area Name' %>
+   <%= a.text_area :notes, placeholder: 'Notes' %>
+   <%= a.submit "Save Area" %>
+ <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811121917) do
+ActiveRecord::Schema.define(version: 20160815074556) do
 
   create_table "apartments", force: :cascade do |t|
     t.string   "street"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 20160811121917) do
 
   add_index "apartments", ["currency_id"], name: "index_apartments_on_currency_id"
   add_index "apartments", ["user_id"], name: "index_apartments_on_user_id"
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "currencies", force: :cascade do |t|
     t.string   "name"

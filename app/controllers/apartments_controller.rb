@@ -2,7 +2,9 @@ class ApartmentsController < ApplicationController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @apartments = Apartment.all
+    @search = Apartment.search(params[:q])
+    @apartments = @search.result
+    # @apartments = Apartment.all
   end
 
   def show

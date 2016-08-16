@@ -17,7 +17,7 @@
     <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }) %>
   </div>
   <div class="field">
-    <%= f.select( :rental_type, RentalType.all.collect {|r| [ r.name, r.id ] }) %>
+    <%= f.select( :rental_type_id, RentalType.all.collect {|r| [ r.name, r.id ] }) %>
   </div>
   <div class="field">
     <%= f.label :picture %>

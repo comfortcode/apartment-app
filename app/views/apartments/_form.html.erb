@@ -45,7 +45,7 @@
     <%= f.check_box :flex_dates %>
   </div>
   <div class="field">
-    <%= f.select( :currency_id, Currency.all.collect {|u| [ raw(u.symbol), u.id ] }et ) %>
+    <%= f.select( :currency_id, Currency.all.collect {|u| [ raw(u.symbol), u.id ] }) %>
   </div>
   <div class="field">
     <%= f.label :price %><br>

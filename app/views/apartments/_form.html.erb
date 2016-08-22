@@ -14,10 +14,10 @@
     <%= f.text_field :street %>
   </div>
   <div class="field">
-    <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }) %>
+    <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }, {:include_blank => true, :default => nil}) %>
   </div>
   <div class="field">
-    <%= f.select( :rental_type_id, RentalType.all.collect {|r| [ r.name, r.id ] }) %>
+    <%= f.select( :rental_type_id, RentalType.all.collect {|r| [ r.name, r.id ] }, {:include_blank => true, :default => nil}) %>
   </div>
   <div class="field">
     <%= f.label :picture %>
@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :from_date %><br>
-    <%= f.date_select :from_date %>
+    <%= f.date_select :from_date, {:include_blank => true, :default => nil} %>
   </div>
   <div class="field">
     <%= f.label :available_now %>
@@ -34,7 +34,7 @@
   </div>
   <div class="field">
     <%= f.label :to_date %><br>
-    <%= f.date_select :to_date %>
+    <%= f.date_select :to_date, {:include_blank => true, :default => nil} %>
   </div>
   <div class="field">
     <%= f.label :to_date_open %><br>
@@ -45,7 +45,7 @@
     <%= f.check_box :flex_dates %>
   </div>
   <div class="field">
-    <%= f.select( :currency_id, Currency.all.collect {|u| [ raw(u.symbol), u.id ] }) %>
+    <%= f.select( :currency_id, Currency.all.collect {|u| [ raw(u.symbol), u.id ] }et ) %>
   </div>
   <div class="field">
     <%= f.label :price %><br>

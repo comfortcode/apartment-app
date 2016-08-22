@@ -6,4 +6,5 @@ class Apartment < ActiveRecord::Base
     has_many :images
     validates :street, presence: true
     default_scope { order('created_at DESC') }    
+    attr_accessor :available_now
 end

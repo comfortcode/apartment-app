@@ -24,10 +24,13 @@
     <%= f.file_field :picture %>
     <%#= f.hidden_field :picture_cache %>
   </div>
-
   <div class="field">
     <%= f.label :from_date %><br>
     <%= f.date_select :from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :available_now %>
+    <%= f.check_box :available_now %>
   </div>
   <div class="field">
     <%= f.label :to_date %><br>

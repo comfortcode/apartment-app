@@ -13,7 +13,6 @@
       <th>To date</th>
       <th>To date open</th>
       <th>Flex dates</th>
-      <th>Currency</th>
       <th>Price</th>
       <th></th>
       <th>Price neg</th>
@@ -39,8 +38,7 @@
         <td><%= apartment.to_date %></td>
         <td><%= apartment.to_date_open %></td>
         <td><%= apartment.flex_dates %></td>
-        <td><%= apartment.currency.symbol.html_safe if apartment.currency %></td>
-        <td><%= apartment.price %></td>
+        <td><%= number_to_currency apartment.price, unit: (apartment.currency.symbol.html_safe if apartment.currency), seperator: ",", delimiter: "" %></td> 
         <td><%= apartment.price_time.name %></td>
         <td><%= apartment.price_neg %></td>
         <td><%= apartment.agent_fee %></td>

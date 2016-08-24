@@ -5,7 +5,7 @@ class Apartment < ActiveRecord::Base
     belongs_to :rental_type
     belongs_to :price_time    
     has_many :images
-    validates :street, presence: true
+    validates :area_id, :street, :rental_type_id, :currency_id, :price_time, :price, :beds, :baths, presence: true
     default_scope { order('created_at DESC') }    
     attr_accessor :available_now
 end

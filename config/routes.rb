@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :areas
   resources :rental_types
   resources :currencies
+  resources :price_times
   
   devise_for :users
   root to: 'pages#home'

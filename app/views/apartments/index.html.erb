@@ -2,8 +2,9 @@
 
 <%= render 'search_form' %>
 
-<%= render 'listings' %>
-
-<br>
-
-<%= link_to 'New Apartment', new_apartment_path %>
+<% if @apartments.empty? %>
+    <h4>Want to broaden your search?</h4>
+    <h5>No apartments matched your search requirements.</h5>
+<% else %>
+    <%= render 'listings' %>
+<% end %>

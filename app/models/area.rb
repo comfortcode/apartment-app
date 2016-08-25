@@ -1,4 +1,4 @@
 class Area < ActiveRecord::Base
-    has_many :apartments
+    has_many :apartments, :dependent => :restrict_with_error
     validates :name, presence: true
 end

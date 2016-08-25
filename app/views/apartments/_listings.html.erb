@@ -6,7 +6,6 @@
       <th>Rental Type</th>
       <th>Price</th>
       <th></th>
-      <th>Price neg</th>
       <th>Beds</th>
       <th>Baths</th>
       <th colspan="3"></th>
@@ -21,7 +20,6 @@
         <td><%= apartment.rental_type.name if apartment.rental_type %></td>
         <td><%= number_to_currency apartment.price, unit: apartment.currency.symbol.html_safe, precision: 0 %></td> 
         <td><%= apartment.price_time.name %></td>
-        <td><%= apartment.price_neg %></td>
         <td><%= apartment.beds %></td>
         <td><%= apartment.baths %></td>
         <td><%= link_to 'More Detail', apartment %></td>

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160824092547) do
     t.date     "to_date"
     t.boolean  "to_date_open"
     t.boolean  "flex_dates"
-    t.decimal  "price"
+    t.integer  "price"
     t.boolean  "price_neg"
     t.boolean  "agent_fee"
     t.boolean  "furnished"

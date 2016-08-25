@@ -69,4 +69,5 @@
 </p>
 
 <%= link_to 'Edit', edit_apartment_path(@apartment) %> |
-<%= link_to 'Back', apartments_path %> 
+<%= link_to 'Back to all apartments', apartments_path %>  |
+<%= link_to 'Destroy', @apartment, method: :delete, data: { confirm: 'Are you sure you want to delete this apartment listing?' } %>

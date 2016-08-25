@@ -24,9 +24,10 @@
         <td><%= apartment.price_neg %></td>
         <td><%= apartment.beds %></td>
         <td><%= apartment.baths %></td>
-        <td><%= link_to 'Show', apartment %></td>
-        <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
-        <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure you want to delete this apartment listing?' } %></td>
+        <td><%= link_to 'More Detail', apartment %></td>
+        <% if apartment.user == current_user %>
+          <td><%= link_to 'Edit Listing', edit_apartment_path(apartment) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

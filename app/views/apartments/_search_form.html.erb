@@ -9,7 +9,7 @@
   </div>
   <div class="field">
     <%= f.label :from_date_lteq, "Available as of"%>
-    <%= f.date_select :from_date_lteq, {:include_blank => true, :default => nil} %>
+    <%= f.date_select :from_date_lteq, {:include_blank => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]} %>
   <div class ="field">
     <%= f.label :beds_gteq, "Minimum Bedrooms" %>
     <%= f.number_field :beds_gteq, :step => 0.5 %>    

@@ -4,21 +4,11 @@
       <th>Street</th>
       <th>Area</th>
       <th>Rental Type</th>
-      <th>User</th>
-      <th>From date</th>
-      <th>To date</th>
-      <th>To date open</th>
-      <th>Flex dates</th>
       <th>Price</th>
       <th></th>
       <th>Price neg</th>
-      <th>Agent fee</th>
-      <th>Furnished</th>
-      <th>Package</th>
-      <th>Flights</th>
       <th>Beds</th>
       <th>Baths</th>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,21 +19,11 @@
         <td><%= apartment.street %></td>
         <td><%= apartment.area.name if apartment.area %></td>
         <td><%= apartment.rental_type.name if apartment.rental_type %></td>
-        <td><%= apartment.user.email %></td>
-        <td><%= apartment.from_date %></td>
-        <td><%= apartment.to_date %></td>
-        <td><%= apartment.to_date_open %></td>
-        <td><%= apartment.flex_dates %></td>
         <td><%= number_to_currency apartment.price, unit: (apartment.currency.symbol.html_safe if apartment.currency), seperator: ",", delimiter: "" %></td> 
         <td><%= apartment.price_time.name %></td>
         <td><%= apartment.price_neg %></td>
-        <td><%= apartment.agent_fee %></td>
-        <td><%= apartment.furnished %></td>
-        <td><%= apartment.package %></td>
-        <td><%= apartment.flights %></td>
         <td><%= apartment.beds %></td>
         <td><%= apartment.baths %></td>
-        <td><%= apartment.description %></td>
         <td><%= link_to 'Show', apartment %></td>
         <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
         <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure you want to delete this apartment listing?' } %></td>

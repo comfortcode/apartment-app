@@ -7,7 +7,9 @@ class PriceTimesController < ApplicationController
   end 
   
   def destroy
-    @price_time.destroy
+    unless @price_time.destroy
+      flash[:notice] = @price_time.errors.full_messages[0]
+    end 
     redirect_to price_times_path
   end
   

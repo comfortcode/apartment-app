@@ -7,7 +7,9 @@ class AreasController < ApplicationController
   end 
   
   def destroy
-    @area.destroy
+    unless @area.destroy
+      flash[:notice] = @area.errors.full_messages[0]
+    end 
     redirect_to areas_path
   end
   

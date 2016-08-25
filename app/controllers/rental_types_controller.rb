@@ -7,7 +7,9 @@ class RentalTypesController < ApplicationController
   end 
   
   def destroy
-    @rental_type.destroy
+    unless @rental_type.destroy
+      flash[:notice] = @rental_type.errors.full_messages[0]
+    end 
     redirect_to rental_types_path
   end
   

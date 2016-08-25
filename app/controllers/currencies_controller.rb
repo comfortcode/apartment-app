@@ -6,7 +6,9 @@ class CurrenciesController < ApplicationController
 
   def destroy
     @currency = Currency.find(params[:id])
-    @currency.destroy
+    unless @currency.destroy
+      flash[:notice] = @currency.errors.full_messages[0]
+    end 
     redirect_to currencies_path
   end
 

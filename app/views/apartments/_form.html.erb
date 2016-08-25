@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :from_date %><br>
-    <%= f.date_select :from_date, {:include_blank => true, :default => nil} %>
+    <%= f.date_select :from_date, {:include_blank => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2} %>
   </div>
   <div class="field">
     <%= f.label :available_now %>
@@ -34,7 +34,7 @@
   </div>
   <div class="field">
     <%= f.label :to_date %><br>
-    <%= f.date_select :to_date, {:include_blank => true, :default => nil} %>
+    <%= f.date_select :to_date, {:include_blank => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 5} %>
   </div>
   <div class="field">
     <%= f.label :to_date_open %><br>

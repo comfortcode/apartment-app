@@ -19,7 +19,7 @@
         <td><%= apartment.street %></td>
         <td><%= apartment.area.name if apartment.area %></td>
         <td><%= apartment.rental_type.name if apartment.rental_type %></td>
-        <td><%= number_to_currency apartment.price, unit: (apartment.currency.symbol.html_safe if apartment.currency), seperator: ",", delimiter: "" %></td> 
+        <td><%= number_to_currency apartment.price, unit: apartment.currency.symbol.html_safe, precision: 0 %></td> 
         <td><%= apartment.price_time.name %></td>
         <td><%= apartment.price_neg %></td>
         <td><%= apartment.beds %></td>

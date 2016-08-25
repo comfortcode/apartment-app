@@ -49,7 +49,7 @@
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.number_field :price, :step => 0.01 %>    
+    <%= f.number_field :price %>    
   </div>
   <div class="field">
     <%= f.select( :price_time_id, PriceTime.all.collect {|t| [ t.name, t.id ] }) %>

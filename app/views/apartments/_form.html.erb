@@ -55,10 +55,6 @@
     <%= f.select( :price_time_id, PriceTime.all.collect {|t| [ t.name, t.id ] }) %>
   </div>  
   <div class="field">
-    <%= f.label :price_neg %><br>
-    <%= f.check_box :price_neg %>
-  </div>
-  <div class="field">
     <%= f.label :agent_fee %><br>
     <%= f.check_box :agent_fee %>
   </div>

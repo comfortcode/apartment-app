@@ -25,6 +25,9 @@ gem 'pundit'
 #Bootstrap
 gem 'bootstrap-sass'
 
+#Font Aswesome
+gem 'font-awesome-rails'
+
 #Faker-Seed Data
 gem 'faker'
 

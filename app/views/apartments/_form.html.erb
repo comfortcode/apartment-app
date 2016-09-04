@@ -55,12 +55,12 @@
     <%= f.select( :price_time_id, PriceTime.all.collect {|t| [ t.name, t.id ] }) %>
   </div>  
   <div class="field">
-    <%= f.label :agent_fee %><br>
-    <%= f.check_box :agent_fee %>
+    <%= f.label :agent_fee, "Is there an agent fee?" %><br>
+    <%= f.select :agent_fee, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
   </div>
   <div class="field">
-    <%= f.label :furnished %><br>
-    <%= f.check_box :furnished %>
+    <%= f.label :furnished, "Is the apartment furnished? (Included in rental price)" %><br>
+    <%= f.select :furnished, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
   </div>
   <div class="field">
     <%= f.label :package %><br>

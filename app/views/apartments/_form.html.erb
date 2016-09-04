@@ -30,11 +30,11 @@
   </div>
   <div class="field">
     <%= f.label :available_now %>
-    <%= f.check_box :available_now %>
+    <%= f.check_box :available_now, id:"availableNow" %>
   </div>
   <div class="field">
     <%= f.label :to_date %><br>
-    <%= f.date_select :to_date, {:include_blank => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 4, :order => [:month, :day, :year] } %>
+    <%= f.date_select :to_date, {:include_blank => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 4, :order => [:month, :day, :year] }, id:"fromDatePicker" %>
   </div>
   <div class="field">
     <%= f.label :to_date_open %><br>

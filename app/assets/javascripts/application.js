@@ -11,7 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
+
+$(document).on('change', '#availableNow', function(){
+    debugger;
+    if($(this).prop('checked')){
+        $('#fromDatePicker').attr('disabled', 'disabled');
+    } else {
+        $('#fromDatePicker').removeAttr('disabled');
+    }
+});

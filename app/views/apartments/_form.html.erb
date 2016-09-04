@@ -56,11 +56,12 @@
   </div>  
   <div class="field">
     <%= f.label :agent_fee, "Is there an agent fee?" %><br>
-    <%= f.select :agent_fee, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
+    <%#= f.select :agent_fee, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
+    <%= f.select :agent_fee, options_for_select([['Yes', true], ['No', false]]) %>
   </div>
   <div class="field">
     <%= f.label :furnished, "Is the apartment furnished? (Included in rental price)" %><br>
-    <%= f.select :furnished, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
+    <%= f.select :furnished, options_for_select([['Yes', true], ['No', false]]) %>
   </div>
   <div class="field">
     <%= f.label :package %><br>

@@ -17,5 +17,13 @@ class Apartment < ActiveRecord::Base
         if furnished.nil?
           errors.add(:furnished, "You must specify if the apartment is furnished")
         end
+    end
+    
+    def from_date_display
+      if from_date.past? || from_date.today?
+        "Available Now"
+      else 
+        from_date.strftime("%B %d, %Y")
+      end 
     end 
 end

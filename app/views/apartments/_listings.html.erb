@@ -8,6 +8,7 @@
       <th></th>
       <th>Beds</th>
       <th>Baths</th>
+      <th>Available</th>      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= apartment.price_time.name %></td>
         <td><%= apartment.beds %></td>
         <td><%= apartment.baths %></td>
+        <td><%= apartment.from_date_display %></td>
         <td><%= link_to 'More Detail', apartment %></td>
         <% if apartment.user == current_user %>
           <td><%= link_to 'Edit Listing', edit_apartment_path(apartment) %></td>

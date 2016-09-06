@@ -25,5 +25,5 @@ class Apartment < ActiveRecord::Base
       else 
         from_date.strftime("%B %d, %Y")
       end 
-    end 
+    end
 end

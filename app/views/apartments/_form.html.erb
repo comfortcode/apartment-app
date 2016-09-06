@@ -11,12 +11,12 @@
 
 <h3>Location</h3>
   <div class="field">
-    <%= f.label :street %>
+    <%= f.label :street, "Street Name" %>
     <%= f.text_field :street %>
   </div>
   <div class="field">
     <%= f.label :area_id %>
-    <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }, {:include_blank => true, :default => nil}) %>
+    <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "-Select Area-", :default => nil}) %>
   </div>
   <div class="field">
     <%= f.label :rental_type_id %>

@@ -1,10 +1,10 @@
 <%= search_form_for @search do |f| %>
   <div class="field">
-    <%= f.label :area_id_eq %>
+    <%= f.label :area_id_eq, "Area" %>
     <%= f.select( :area_id_eq, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "Any Area"})%>
   </div>
     <div class="field">
-    <%= f.label :rental_type_id_eq %>
+    <%= f.label :rental_type_id_eq, "Rental Type" %>
     <%= f.select( :rental_type_id_eq, RentalType.all.collect {|r| [ r.name, r.id ] }, {:prompt => "Any Length of Time"}) %>
   </div>
   <div class="field">

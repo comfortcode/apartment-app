@@ -9,78 +9,76 @@
     </div>
   <% end %>
 
+<h3>Location</h3>
   <div class="field">
-    <%= f.label :street %><br>
+    <%= f.label :street %>
     <%= f.text_field :street %>
   </div>
   <div class="field">
+    <%= f.label :area_id %>
     <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }, {:include_blank => true, :default => nil}) %>
   </div>
   <div class="field">
-    <%= f.select( :rental_type_id, RentalType.all.collect {|r| [ r.name, r.id ] }, {:include_blank => true, :default => nil}) %>
+    <%= f.label :rental_type_id %>
+    <%= f.select( :rental_type_id, RentalType.all.collect {|r| [ r.name, r.id ] }, {:default => nil}) %>
   </div>
+<h3>Price</h3>
   <div class="field">
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-    <%#= f.hidden_field :picture_cache %>
-  </div>
-  <div class="field">
-    <%= f.label :from_date %><br>
-    <%= f.date_select :from_date, {:prompt => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year] }, id:"fromDatePicker" %>
-  </div>
-  <div class="field">
-    <%= f.label :available_now %>
-    <%= f.check_box :available_now, id:"availableNow" %>
-  </div>
-  <div class="field">
-    <%= f.label :to_date %><br>
-    <%= f.date_select :to_date, {:prompt => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 4, :order => [:month, :day, :year] } %>
-  </div>
-  <div class="field">
-    <%= f.label :to_date_open %><br>
-    <%= f.check_box :to_date_open %>
-  </div>
-  <div class="field">
-    <%= f.label :flex_dates %><br>
-    <%= f.check_box :flex_dates %>
-  </div>
-  <div class="field">
+    <%= f.label :price, "Rental Price" %>    
     <%= f.select( :currency_id, Currency.all.collect {|u| [ raw(u.symbol), u.id ] }) %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
     <%= f.number_field :price %>    
-  </div>
-  <div class="field">
     <%= f.select( :price_time_id, PriceTime.all.collect {|t| [ t.name, t.id ] }) %>
   </div>  
   <div class="field">
-    <%= f.label :agent_fee, "Is there an agent fee?" %><br>
+    <%= f.label :agent_fee, "Is there an agent fee?" %>
     <%= f.select :agent_fee, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
   </div>
+<h3>Availability</h3>
   <div class="field">
-    <%= f.label :furnished, "Is the apartment furnished? (Included in rental price)" %><br>
+    <%= f.label :from_date, "The apartment is available as of" %>
+    <%= f.date_select :from_date, {:prompt => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year] }, id:"fromDatePicker" %>
+  </div>
+  <div class="field">
+    <%= f.check_box :available_now, id:"availableNow" %>
+    <%= f.label :available_now, "The apartment is available" %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date, "The apartment is available until"  %>
+    <%= f.date_select :to_date, {:prompt => true, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 4, :order => [:month, :day, :year] } %>
+  </div>
+  <div class="field">
+    <%= f.check_box :to_date_open %>
+    <%= f.label :to_date_open, "There is not a specific end date" %>
+  </div>
+<h3>Description</h3>
+  <div class="field">
+    <%= f.label :furnished, "Is the apartment furnished? (Included in rental price)" %>
     <%= f.select :furnished, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
   </div>
   <div class="field">
-    <%= f.label :package %><br>
     <%= f.check_box :package %>
+    <%= f.label :package, "Furniture package for sale" %><br>
   </div>
   <div class="field">
-    <%= f.label :flights %><br>
+    <%= f.label :flights, "Flights up" %><br>
     <%= f.number_field :flights, :step => 0.5 %>    
   </div>
   <div class="field">
-    <%= f.label :beds %><br>
+    <%= f.label :beds, "Bedrooms" %><br>
     <%= f.number_field :beds, :step => 0.5 %>    
   </div>
   <div class="field">
-    <%= f.label :baths %><br>
+    <%= f.label :baths, "Bathrooms" %><br>
     <%= f.number_field :baths, :step => 0.5 %>    
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+    <%#= f.hidden_field :picture_cache %>
   </div>
   <div class="actions">
     <%= f.submit %>

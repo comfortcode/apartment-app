@@ -27,6 +27,7 @@
         <td><%= link_to 'More Detail', apartment %></td>
         <% if apartment.user == current_user %>
           <td><%= link_to 'Edit Listing', edit_apartment_path(apartment) %></td>
+          <td><%= link_to 'Delete', @apartment, method: :delete, data: { confirm: 'Are you sure you want to permanently delete this apartment listing?' } %></td>
         <% end %>
       </tr>
     <% end %>

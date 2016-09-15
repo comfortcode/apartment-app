@@ -11,12 +11,12 @@
 
 <h3>Location</h3>
   <div class="field">
-    <%= f.label :street, "Street Name" %>
-    <%= f.text_field :street %>
-  </div>
-  <div class="field">
     <%= f.label :area_id %>
     <%= f.select( :area_id, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "-Select Area-", :default => nil}) %>
+  </div>
+  <div class="field">
+    <%= f.label :street, "Street Name" %>
+    <%= f.text_field :street %>
   </div>
   <div class="field">
     <%= f.label :rental_type_id %>
@@ -52,18 +52,6 @@
   </div>
 <h3>Description</h3>
   <div class="field">
-    <%= f.label :furnished, "Is the apartment furnished? (Included in rental price)" %>
-    <%= f.select :furnished, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
-  </div>
-  <div class="field">
-    <%= f.check_box :package %>
-    <%= f.label :package, "Furniture package for sale" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :flights, "Flights up" %><br>
-    <%= f.number_field :flights, :step => 0.5 %>    
-  </div>
-  <div class="field">
     <%= f.label :beds, "Bedrooms" %><br>
     <%= f.number_field :beds, :step => 0.5 %>    
   </div>
@@ -72,8 +60,21 @@
     <%= f.number_field :baths, :step => 0.5 %>    
   </div>
   <div class="field">
+    <%= f.label :flights, "Flights up" %><br>
+    <%= f.number_field :flights, :step => 0.5 %>    
+  </div>
+  <div class="field">
+    <%= f.label :furnished, "Is the apartment furnished?"  %>
+    <em>(Use of furniture is included in rental price)</em>
+    <%= f.select :furnished, options_for_select([['Yes', true], ['No', false]]), {:prompt => ""} %>
+  </div>
+  <div class="field">
+    <%= f.check_box :package %>
+    <%= f.label :package, "There is a furniture package for sale" %><br>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Anything else you'd like to add about the apartment?" %>
   </div>
   <div class="field">
     <%= f.label :picture %>

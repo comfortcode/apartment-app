@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :currencies
   resources :price_times
   
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   get 'about' => 'pages#about', as: :about
   get 'contact' => 'pages#contact', as: :contact

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboards/user'
+
+  get 'dashboards/admin'
+
   resources :apartments
   resources :areas
   resources :rental_types

@@ -1,0 +1,7 @@
+<h1>My Apartment Listings</h1>
+
+<% if @apartments.empty? %>
+    <h4>Doesn't look like you have apartments listed yet.</h4>
+<% else %>
+    <%= render 'apartments/listings' %>
+<% end %>

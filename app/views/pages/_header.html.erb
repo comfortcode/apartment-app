@@ -1,3 +1,4 @@
+<%= search_form_for @search do |f| %>
     <div id="header" id="index-header" class="header-slide">
       <div class="container">
         <div class="row">
@@ -8,59 +9,29 @@
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
                       <label for="country">Area</label>
-                      <select class="form-control">
-                        <option>Ramat Eshkol</option>
-                        <option>Indonesia</option>
-                        <option>Japan</option>
-                        <option>South Korea</option>
-                        <option>China</option>
-                      </select>
+                      <%= f.select( :area_id_eq, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "Any Area"}, class:'form-control')%>
                     </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
                       <label for="bedroom">Rental Type</label>
-                      <select class="form-control">
-                        <option>Long Term</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
+                        <%= f.select( :rental_type_id_eq, RentalType.all.collect {|r| [ r.name, r.id ] }, {:prompt => "Short or Long Term"}, class:'form-control') %>
                     </div>
                   </div>
-                  <!-- break -->
-                  <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="col-md-3 col-sm-3 col-xs-3">
                     <div class="form-group">
-                      <label for="location">Location</label>
-                      <select class="form-control">
-                        <option>Tasmania</option>
-                        <option>Yogyakarta</option>
-                        <option>Tokyo</option>
-                        <option>Busan</option>
-                        <option>Taipe</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="bathroom">Minimum Bedrooms</label>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
+                      <label>Minimum Bedrooms</label>
+                      <%= f.number_field :beds_gteq, :step => 0.5, class:'form-control', value: 1 %>    
                     </div>
                   </div>
-                  <!-- break -->
-                  <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="col-md-9 col-sm-9 col-xs-9">
                     <div class="form-group">
-                      <label for="type">Date</label>
-                      <select class="form-control">
-                        <option>Villa</option>
-                        <option>Recident</option>
-                        <option>Commercial</option>
-                      </select>
+                      <label for="bathroom">Date Needed</label>
+                      <%= f.date_select :from_date_lteq, {:prompt => { day: 'Any date', month: 'Any month', year: 'Any year' }, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]}, {class: 'form-control col-md-3 col-sm-3 col-xs-3'} %>
                     </div>
                   </div>
-                  <div class="col-md-12 col-sm-12"><input type="submit" name="submit" value="Search" class="btn btn-success btn-lg btn-block"></div>
-
+                  <div class="col-md-12 col-sm-12">
+                    <%= f.submit "Search", class:'btn btn-success btn-lg btn-block' %>
                 </form>
               </div>
             </div>
@@ -68,3 +39,4 @@
         </div>
       </div>
     </div>
+<% end %>

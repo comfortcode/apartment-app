@@ -8,13 +8,13 @@
                 <form role="form">
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
-                      <label for="country">Area</label>
+                      <label>Area</label>
                       <%= f.select( :area_id_eq, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "Any Area"}, class:'form-control')%>
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group">
-                      <label for="bedroom">Rental Type</label>
+                      <label>Rental Type</label>
                         <%= f.select( :rental_type_id_eq, RentalType.all.collect {|r| [ r.name, r.id ] }, {:prompt => "Short or Long Term"}, class:'form-control') %>
                     </div>
                   </div>
@@ -25,8 +25,8 @@
                     </div>
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9">
-                    <div class="form-group">
-                      <label for="bathroom">Date Needed</label>
+                    <div class="form-group inline">
+                      <label>Date Needed</label>
                       <%= f.date_select :from_date_lteq, {:prompt => { day: 'Any date', month: 'Any month', year: 'Any year' }, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]}, {class: 'form-control col-md-3 col-sm-3 col-xs-3'} %>
                     </div>
                   </div>

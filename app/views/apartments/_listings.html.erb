@@ -21,8 +21,8 @@
         <td><%= apartment.rental_type.name if apartment.rental_type %></td>
         <td><%= number_to_currency apartment.price, unit: apartment.currency.symbol.html_safe, precision: 0 %></td> 
         <td><%= apartment.price_time.name %></td>
-        <td><%= number_to_human(apartment.beds, strip_insignificant_zeros: true) %></td>
-        <td><%= number_to_human(apartment.baths, strip_insignificant_zeros: true) %></td>        
+        <td><%= apartment.beds_int %></td>
+        <td><%= apartment.baths_int %></td>        
         <td><%= apartment.from_date_display %></td>
         <td><%= link_to 'More Detail', apartment %></td>
         <% if apartment.user == current_user %>

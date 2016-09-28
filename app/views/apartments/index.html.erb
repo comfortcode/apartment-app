@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">
             <div class="page-title">
-              <h2>Category : <span>Villa</span></p>
+              <h2>Text Here : <span>Another Font</span></p>
             </div>
             <!--<ol class="breadcrumb">-->
             <!--  <li><a href="#">Home</a></li>-->
@@ -59,12 +59,9 @@
 
             <!-- begin:product -->
             <div class="row container-realestate">
-              <%= render 'apartment' %>
-              <%= render 'apartment' %>
-              <%= render 'apartment' %>
-              <%= render 'apartment' %>
-              <%= render 'apartment' %>
-
+              <% @apartments.each do |apartment| %>
+                <%= render partial: 'apartment', locals: { apartment: apartment} %>
+              <% end %>              
             </div>
             <!-- end:product -->
           </div>

@@ -4,5 +4,9 @@
     <h4>To list an apartment, <%=link_to "click here.", new_apartment_path %> </h4>
 <% else %>
     <h4>To list another apartment, <%=link_to "click here.", new_apartment_path %> </h4>
-    <%= render 'apartments/listings' %>
+    <div class="row container-realestate">
+        <% @apartments.each do |apartment| %>
+            <%= render partial: 'apartments/apartment', locals: { apartment: apartment} %>
+        <% end %>              
+    </div>
 <% end %>

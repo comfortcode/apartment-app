@@ -16,6 +16,13 @@
         </div>
         <div class="property-content">
             <h3><a href="#"><%=apartment.street%></a> <small>Apartment in <%= apartment.area.name %></small></h3>
+            <% if apartment.user == current_user %>
+                <%= link_to 'View', apartment %> / 
+                <%= link_to 'Edit', edit_apartment_path(apartment) %> / 
+                <%= link_to 'Delete', apartment, method: :delete, data: { confirm: 'Are you sure you want to permanently delete this apartment listing?' } %>
+            <% else %>
+                <%= link_to 'View Details', apartment %>
+            <% end %>
         </div>
     </div>
 </div>

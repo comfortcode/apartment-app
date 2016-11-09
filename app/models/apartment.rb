@@ -29,7 +29,7 @@ class Apartment < ActiveRecord::Base
     
     def from_date_display
       if from_date.past? || from_date.today?
-        "Available Now"
+        "Available Immediately"
       else 
         "Available as of #{from_date.strftime("%b %-d")}"
       end 

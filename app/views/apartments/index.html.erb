@@ -50,20 +50,19 @@
                       <option>25</option>
                       <option>50</option>
                       <option>100</option>
-                    </select>
+                    </select0>
                   </div>
                 </form>
               </div>
             </div>
             <!-- end:sorting -->
 
-            <!-- begin:product -->
             <div class="row container-realestate">
               <% @apartments.each do |apartment| %>
                 <%= render partial: 'apartment', locals: { apartment: apartment} %>
               <% end %>              
             </div>
-            <!-- end:product -->
+            
           </div>
           <!-- end:article -->
 

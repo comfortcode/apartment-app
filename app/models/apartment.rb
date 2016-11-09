@@ -10,6 +10,14 @@ class Apartment < ActiveRecord::Base
     default_scope { order('created_at DESC') }    
     attr_accessor :available_now
 
+    def baths_int
+      ActionController::Base.helpers.number_to_human(baths, strip_insignificant_zeros: true)
+    end 
+
+    def beds_int
+      ActionController::Base.helpers.number_to_human(beds, strip_insignificant_zeros: true)
+    end 
+    
     def agent_fee_and_furnished_are_present
         if agent_fee.nil?
           errors.add(:agent_fee, "You must specify if there is an agent fee")
@@ -21,9 +29,9 @@ class Apartment < ActiveRecord::Base
     
     def from_date_display
       if from_date.past? || from_date.today?
-        "Available Now"
+        "Available Immediately"
       else 
-        from_date.strftime("%B %d, %Y")
+        "Available as of #{from_date.strftime("%b %-d")}"
       end 
     end
 end

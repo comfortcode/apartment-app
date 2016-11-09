@@ -1,5 +1,14 @@
+<%= render 'search_form' %>
+
+<% if @apartments.empty? %>
+    <h4>Want to broaden your search?</h4>
+    <h5>No apartments matched your search requirements.</h5>
+<% else %>
+    <h1>Hi!</h1>
+<% end %>
+
     <!-- begin:header -->
-    <div id="header" class="heading" style="background-image: url(img/img01.jpg);">
+    <div id="header" class="heading">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-12">

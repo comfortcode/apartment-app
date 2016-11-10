@@ -34,6 +34,9 @@ gem 'faker'
 # Ransack- searching
 gem 'ransack'
 
+# Jquery UI - for datepicker
+gem 'jquery-ui-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

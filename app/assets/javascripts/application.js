@@ -17,11 +17,15 @@
 //= require_tree .
 //= require bootstrap
 
-$(document).on('change', '#availableNow', function(){
-    debugger;
-    if($(this).prop('checked')){
-        $('#fromDatePicker').attr('disabled', 'disabled');
-    } else {
-        $('#fromDatePicker').removeAttr('disabled');
-    }
+$(function() {
+          $( "#date-picker" ).datepicker({ dateFormat: 'dd-mm-yy' }).val();;
 });
+      
+// $(document).on('change', '#availableNow', function(){
+//     debugger;
+//     if($(this).prop('checked')){
+//         $('#fromDatePicker').attr('disabled', 'disabled');
+//     } else {
+//         $('#fromDatePicker').removeAttr('disabled');
+//     }
+// });

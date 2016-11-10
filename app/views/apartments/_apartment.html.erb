@@ -15,7 +15,7 @@
             <span><i class="fa fa-male"></i> <%= pluralize(apartment.baths_int, "Bathroom") %></span>
         </div>
         <div class="property-content">
-            <h3><a href="#"><%=apartment.street%></a> <small>Apartment in <%= apartment.area.name %></small></h3>
+            <h3><%= link_to apartment.street, apartment%></a> <small>Apartment in <%= apartment.area.name %></small></h3>
             <% if apartment.user == current_user %>
                 <%= link_to 'View', apartment %> / 
                 <%= link_to 'Edit', edit_apartment_path(apartment) %> / 

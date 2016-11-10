@@ -18,16 +18,17 @@
                         <%= f.select( :rental_type_id_eq, RentalType.all.collect {|r| [ r.name, r.id ] }, {:prompt => "Short or Long Term"}, class:'form-control') %>
                     </div>
                   </div>
-                  <div class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="col-md-6 col-sm-3 col-xs-3">
                     <div class="form-group">
                       <label>Minimum Bedrooms</label>
                       <%= f.number_field :beds_gteq, :step => 0.5, class:'form-control', value: 1 %>    
                     </div>
                   </div>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <div class="col-md-6 col-sm-9 col-xs-9">
                     <div class="form-group inline">
                       <label>Date Needed</label>
-                      <%= f.date_select :from_date_lteq, {:prompt => { day: 'Any date', month: 'Any month', year: 'Any year' }, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]}, {class: 'form-control col-md-3 col-sm-3 col-xs-3'} %>
+                      <%= f.text_field :from_date_lteq, class: 'form-control' %>
+                      <%#= f.date_select :from_date_lteq, {:prompt => { day: 'Any date', month: 'Any month', year: 'Any year' }, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]}, {class: 'form-control col-md-3 col-sm-3 col-xs-3'} %>
                     </div>
                   </div>
                   <div class="col-md-12 col-sm-12">

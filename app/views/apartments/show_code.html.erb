@@ -1,0 +1,68 @@
+<p>
+  <strong>Street:</strong>
+  <%= @apartment.street %>
+</p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @apartment.from_date %>
+</p>
+
+<p>
+  <strong>To date:</strong>
+  <%= @apartment.to_date %>
+</p>
+
+<p>
+  <strong>To date open:</strong>
+  <%= @apartment.to_date_open %>
+</p>
+
+<p>
+  <strong>Flex dates:</strong>
+  <%= @apartment.flex_dates %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @apartment.price %>
+</p>
+
+<p>
+  <strong>Agent fee:</strong>
+  <%= @apartment.agent_fee %>
+</p>
+
+<p>
+  <strong>Furnished:</strong>
+  <%= @apartment.furnished %>
+</p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @apartment.package %>
+</p>
+
+<p>
+  <strong>Flights:</strong>
+  <%= @apartment.flights %>
+</p>
+
+<p>
+  <strong>Beds:</strong>
+  <%= @apartment.beds %>
+</p>
+
+<p>
+  <strong>Baths:</strong>
+  <%= @apartment.baths %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @apartment.description %>
+</p>
+
+<%= link_to 'Edit', edit_apartment_path(@apartment) %> |
+<%= link_to 'Back to all apartments', apartments_path %>  |
+<%= link_to 'Destroy', @apartment, method: :delete, data: { confirm: 'Are you sure you want to delete this apartment listing?' } %>

@@ -1,20 +1,48 @@
 <%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :area_id_eq, "Area" %>
-    <%= f.select( :area_id_eq, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "Any Area"})%>
-  </div>
-    <div class="field">
-    <%= f.label :rental_type_id_eq, "Rental Type" %>
-    <%= f.select( :rental_type_id_eq, RentalType.all.collect {|r| [ r.name, r.id ] }, {:prompt => "Any Length of Time"}) %>
-  </div>
-  <div class="field">
-    <%= f.label :from_date_lteq, "Available as of"%>
-    <%= f.date_select :from_date_lteq, {:prompt => { day: 'Any date', month: 'Any month', year: 'Any year' }, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]} %>
-  <div class ="field">
-    <%= f.label :beds_gteq, "Minimum Bedrooms" %>
-    <%= f.number_field :beds_gteq, :step => 0.5 %>    
-  </div>
-  <div class ="actions">
-    <%= f.submit "Search" %>
-  </div>
+    <div id="header" class="heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-12">
+            <div class="quick-search">
+              <div class="row">
+                <form role="form">
+                  <div class="col-md-2 col-sm-3 col-xs-6">
+                    <div class="form-group">
+                      <label for="bedroom">Area</label>
+                      <%= f.select( :area_id_eq, Area.all.collect {|a| [ a.name, a.id ] }, {:prompt => "Any Area"}, class: 'form-control')%>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-3 col-xs-6">
+                    <div class="form-group">
+                      <label for="status">Rental Type</label>
+                      <%= f.select( :rental_type_id_eq, RentalType.all.collect {|r| [ r.name, r.id ] }, {:prompt => "Any Length of Time"}, class: 'form-control') %>
+                      </div>
+                  </div>
+                  <div class="col-md-2 col-sm-3 col-xs-6">
+                    <div class="form-group">
+                      <label for="status">Available as of</label>
+                      <%#= f.date_select :from_date_lteq, {:prompt => { day: 'Any date', month: 'Any month', year: 'Any year' }, :default => nil, :start_year => Date.today.year, :end_year => Date.today.year + 2, :order => [:month, :day, :year]} %>
+                      <select class="form-control">
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="form-group">
+                      <label for="type">Minimum Bedrooms</label>
+                      <%= f.number_field :beds_gteq, :step => 0.5, class: 'form-control' %>    
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="form-group">
+                      <label for="maxprice">&nbsp;</label>
+                      <%= f.submit "Search", class:'btn btn-success btn-block' %>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 <% end %>

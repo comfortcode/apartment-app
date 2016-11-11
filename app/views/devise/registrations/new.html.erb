@@ -1,51 +1,39 @@
-<h2>List My Apartment</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-            <form role="form">
-              <div class="form-group">
-                <label for="emailAddress">Email address</label>
-                <input type="email" class="form-control input-lg" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control input-lg" placeholder="Password">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="forget"> Keep me logged in
-                </label>
-              </div>
-            </form>
-          </div>
-
-  <div class="field">
-    <%= f.label :email, "Email Address" %><br />
-    <%= f.email_field :email, autofocus: true %>
+</br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-12 contact-container">
+          <h1>List My Apartment</h1>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="field">
+              <%= f.label :email, "Email Address" %><br />
+              <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+            </div>
+          
+            <div class="field">
+              <%= f.label :password, "Choose a password" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            </div>
+          
+            <!--<div class="field">-->
+            <!--  <%#= f.label :password_confirmation %><br />-->
+            <!--  <%#= f.password_field :password_confirmation, autocomplete: "off" %>-->
+            <!--</div>-->
+          
+            <div class="field">
+              <%= f.check_box :agent %>
+              <%= f.label :agent, "I am an agent" %>
+            </div>
+            <%= render "devise/shared/links" %>  
+            <div class="actions">
+              <%= f.submit "Next: Add Apartment Details", class:'btn btn-success btn-block'  %>
+              </br>
+            </div>
+          <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password, "Choose a password" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <!--<div class="field">-->
-  <!--  <%#= f.label :password_confirmation %><br />-->
-  <!--  <%#= f.password_field :password_confirmation, autocomplete: "off" %>-->
-  <!--</div>-->
-
-  <div class="field">
-    <%= f.check_box :agent %>
-    <%= f.label :agent, "I am an agent" %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit "Next" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+</br>

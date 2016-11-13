@@ -7,6 +7,8 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'heroku', '~> 3.37.1'
 
+gem 'sparkpost_rails'
+
  group :production do
    gem 'pg'
    gem 'rails_12factor'

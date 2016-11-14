@@ -22,6 +22,7 @@ class ApartmentsController < ApplicationController
     
     if @apartment.save
        flash[:notice] = "Congratulations! Your apartment has been added."
+       WelcomeMailer.success_email(@apartment.user, @apartment).deliver_now!
        redirect_to apartments_path
     else
        flash[:error] = "There was an error saving your listing. Please try again."

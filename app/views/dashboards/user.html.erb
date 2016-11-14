@@ -1,12 +1,27 @@
+<div id="content">
+<div class="container">
 <h1>My Apartment Listings</h1>
 <% if @apartments.empty? %>
     <h4>Doesn't look like you have apartments listed yet.</h4>
-    <h4>To list an apartment, <%=link_to "click here.", new_apartment_path %> </h4>
+    <p>To list an apartment, <%=link_to "click here.", new_apartment_path %> </p>
 <% else %>
-    <h4>To list another apartment, <%=link_to "click here.", new_apartment_path %> </h4>
-    <div class="row container-realestate">
-        <% @apartments.each do |apartment| %>
-            <%= render partial: 'apartments/apartment', locals: { apartment: apartment} %>
-        <% end %>              
-    </div>
+    <p>To list another apartment, <%=link_to "click here.", new_apartment_path %> </p>
+        <div class="row">
+          <!-- begin:article -->
+          <div class="col-md-12">
+            <div class="row">
+              <!--<div class="col-md-12">-->
+              <!--  </br>-->
+              <!--  </br>-->
+              <!--</div>-->
+            </div>
+            <div class="row container-realestate">
+              <% @apartments.each do |apartment| %>
+                <%= render partial: 'apartments/apartment', locals: { apartment: apartment} %>
+              <% end %>              
+            </div>
+        </div>
+      </div>
 <% end %>
+</div>
+</div>

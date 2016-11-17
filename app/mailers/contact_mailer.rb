@@ -4,7 +4,6 @@ class ContactMailer < ApplicationMailer
     @email = email
     @phone = phone
     @message = message
-    @recipient = ENV['ADMIN_EMAIL']
-    mail(to: @recipient, subject: 'Contact Form', body: 'name: will go here')
+    mail(to: 'hello@ramateshkolapartments.com', subject: 'Contact Form', body: 'name: will go here')
   end
 end
